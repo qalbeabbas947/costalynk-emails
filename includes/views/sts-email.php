@@ -11,12 +11,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $coastalynk_sts_email  = get_option( 'coastalynk_sts_email' );
-$coastalynk_sts_email_subject = !empty( $coastalynk_sts_email_subject ) ? $coastalynk_sts_email_subject : __( 'Coastalynk STS Alert - Lagos Offshore
-', 'coastalynk-emails' );
+$coastalynk_sts_email_subject  = get_option( 'coastalynk_sts_email_subject' );
+$coastalynk_sts_email_subject = !empty( $coastalynk_sts_email_subject ) ? $coastalynk_sts_email_subject : __( 'Coastalynk STS Alert - [port]', 'coastalynk-emails' );
 $coastalynk_sts_body  = get_option( 'coastalynk_sts_body' );
 $coastalynk_sts_email_default  = __( "Dear Sir/Madam,
 <br>
-<p>This is an automatic notification from Coastalynk Maritime Intelligence regarding a Ship-to-Ship (STS) operation detected offshore Lagos.</p><br>
+<p>This is an automatic notification from Coastalynk Maritime Intelligence regarding a Ship-to-Ship (STS) operation detected at [port].</p><br>
 <h3>Event Summary:</h3>
 <p>Date/Time (UTC): [last_updated]</p>
 <p>Location: ([vessel1_lat], [vessel1_lon]) (Lagos Offshore)</p>

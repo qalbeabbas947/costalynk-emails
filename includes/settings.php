@@ -82,6 +82,8 @@ class Coastalynk_Email_Settings {
 
         if( $current_tab === 'general' ) {
 
+            update_option( 'coatalynk_finance_admin_email', sanitize_text_field( $_POST['coatalynk_finance_admin_email'] ) );
+            update_option( 'coatalynk_nimasa_admin_email', sanitize_text_field( $_POST['coatalynk_nimasa_admin_email'] ) );
             update_option( 'coatalynk_site_admin_email', sanitize_text_field( $_POST['coatalynk_site_admin_email'] ) );
             update_option( 'coatalynk_npa_admin_email', sanitize_text_field( $_POST['coatalynk_npa_admin_email'] ) );
             $url = add_query_arg( 'tab', 'general', $url );

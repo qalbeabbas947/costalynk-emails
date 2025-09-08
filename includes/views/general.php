@@ -8,6 +8,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 $coatalynk_site_admin_email 	= get_option( 'coatalynk_site_admin_email' );
 $coatalynk_npa_admin_email 	    = get_option( 'coatalynk_npa_admin_email' );
+$coatalynk_finance_admin_email 	= get_option( 'coatalynk_finance_admin_email' );
+$coatalynk_nimasa_admin_email 	= get_option( 'coatalynk_nimasa_admin_email' );
 
 ?>
 <div id="general_settings" class="cs_ld_tabs"> 
@@ -36,7 +38,28 @@ $coatalynk_npa_admin_email 	    = get_option( 'coatalynk_npa_admin_email' );
                         </p>
                     </td>    
                 </tr>
-				       
+				<tr> 
+                    <td width="30%" align="left" valign="top"> 
+						<strong><label align="left" for="coatalynk_npa_admin_email"><?php _e( 'NIMASA Admin Email', 'coastalynk-emails' ); ?></label></strong>
+					</td>
+                    <td width="70%">
+                        <input type="text" id="coatalynk_nimasa_admin_email" name="coatalynk_nimasa_admin_email" value="<?php echo get_option( 'coatalynk_nimasa_admin_email' ); ?>">
+                        <p class="description" style="font-weight: normal;">
+                            <?php echo __('Enter the NIMASA Email Address.', 'coastalynk-emails' ); ?>
+                        </p>
+                    </td>    
+                </tr> 
+                <tr> 
+                    <td width="30%" align="left" valign="top"> 
+						<strong><label align="left" for="coatalynk_npa_admin_email"><?php _e( 'Finance Department Admin Email', 'coastalynk-emails' ); ?></label></strong>
+					</td>
+                    <td width="70%">
+                        <input type="text" id="coatalynk_finance_admin_email" name="coatalynk_finance_admin_email" value="<?php echo get_option( 'coatalynk_finance_admin_email' ); ?>">
+                        <p class="description" style="font-weight: normal;">
+                            <?php echo __('Enter the Finance Department Admin Email Address.', 'coastalynk-emails' ); ?>
+                        </p>
+                    </td>    
+                </tr>       
             </tbody>
         </table>
         
