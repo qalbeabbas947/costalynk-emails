@@ -31,6 +31,8 @@ $coastalynk_sbm_complete_email_default  = __( "Dear Sir/Madam,
 <p>Before Draught: [before_draught]</p>
 <p>After Draught: [after_draught]</p>
 <br>
+Leavy Data:<br>
+[Leavy_data]<br>
 <p>View on Coastalynk Map(<a href='[sbm-page-url]'>Click Here</a>)</p>
 <br>
 <p>This notification is part of Coastalynk\'s effort to provide real-time intelligence to support anti-bunkering enforcement, maritime security, and revenue protection.</p>
@@ -52,9 +54,7 @@ $coastalynk_sbm_email_default  = __( "Dear Sir/Madam,
 <p>Name: [name] | IMO: [imo] | MMSI: [mmsi]</p>
 <p>Type: [type] | Flag: <img src='[country_flag]' width='30px' alt='[country_iso]' /></p>
 <p>Status: [navigation_status]</p>
-<p>Before Draught: [before_draught]</p>
-<p>After Draught: [after_draught]</p>
-<br>
+<p>Draught: [draught]</p>
 <p>View on Coastalynk Map(<a href='[sbm-page-url]'>Click Here</a>)</p>
 <br>
 <p>This notification is part of Coastalynk\'s effort to provide real-time intelligence to support anti-bunkering enforcement, maritime security, and revenue protection.</p>
@@ -133,7 +133,8 @@ $coastalynk_sbm_body = !empty( $coastalynk_sbm_body ) ? $coastalynk_sbm_body : $
                         <p><strong>[before_draught]</strong>: <?php _e( 'Before Vessel Draught,', 'coastalynk-emails' ); ?></p>
                         <p><strong>[last_position_UTC]</strong>: <?php _e( 'Vessel Last Position,', 'coastalynk-emails' ); ?></p>
                         <p><strong>[port]</strong>: <?php _e( 'Port Name.', 'coastalynk-emails' ); ?></p>   
-                        <p><strong>[port_id]</strong>: <?php _e( 'Port ID,', 'coastalynk-emails' ); ?></p>   
+                        <p><strong>[port_id]</strong>: <?php _e( 'Port ID,', 'coastalynk-emails' ); ?></p>  
+                        <p><strong>[Leavy_data]</strong>: <?php _e( 'Leavy Data.', 'coastalynk-emails' ); ?></p> 
                         <p><strong>[distance]</strong>: <?php _e( 'Distance between vessels.', 'coastalynk-emails' ); ?></p> 
                         <p><strong>[sbm-page-url]</strong>: <?php _e( 'Vessel Page URL.', 'coastalynk-emails' ); ?></p>   
                         <p><strong>[last_updated]</strong>: <?php _e( 'Last Updated.', 'coastalynk-emails' ); ?></p>   

@@ -75,6 +75,11 @@ class Coastalynk_Email_Settings {
             $coastalynk_sbm_email_subject = isset( $_POST['coastalynk_sbm_email_subject'] ) ? sanitize_textarea_field( stripslashes_deep( $_POST['coastalynk_sbm_email_subject'] ) ) : '';
             $coastalynk_sbm_body = isset( $_POST['coastalynk_sbm_body'] ) ? wp_kses_post( stripslashes_deep( $_POST['coastalynk_sbm_body'] ) ) : '';
 
+            $coastalynk_sbm_complete_email_subject = isset( $_POST['coastalynk_sbm_complete_email_subject'] ) ? sanitize_textarea_field( stripslashes_deep( $_POST['coastalynk_sbm_complete_email_subject'] ) ) : '';
+            $coastalynk_sbm_complete_body = isset( $_POST['coastalynk_sbm_complete_body'] ) ? wp_kses_post( stripslashes_deep( $_POST['coastalynk_sbm_complete_body'] ) ) : '';
+
+            update_option( 'coastalynk_sbm_complete_email_subject', $coastalynk_sbm_complete_email_subject );
+            update_option( 'coastalynk_sbm_complete_body', $coastalynk_sbm_complete_body );
             update_option( 'coastalynk_sbm_email_subject', $coastalynk_sbm_email_subject );
             update_option( 'coastalynk_sbm_body', $coastalynk_sbm_body );
             $url = add_query_arg( 'tab', 'sbm_email', $url );
