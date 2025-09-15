@@ -39,8 +39,8 @@ Leavy Data:<br>
 <br>
 <p>Regards,</p>
 <p>Coastalynk Maritime Intelligence</p>", 'coastalynk-emails' );
-$coastalynk_sbm_complete_body = !empty( $coastalynk_sbm_complete_body ) ? $coastalynk_sbm_complete_body : $coastalynk_sbm_complete_email_default;
 
+$coastalynk_sbm_complete_body = !empty( $coastalynk_sbm_complete_body ) ? $coastalynk_sbm_complete_body : $coastalynk_sbm_complete_email_default;
 $coastalynk_sbm_body  = get_option( 'coastalynk_sbm_body' );
 $coastalynk_sbm_email_default  = __( "Dear Sir/Madam,
 <br>
@@ -62,6 +62,31 @@ $coastalynk_sbm_email_default  = __( "Dear Sir/Madam,
 <p>Regards,</p>
 <p>Coastalynk Maritime Intelligence</p>", 'coastalynk-emails' );
 $coastalynk_sbm_body = !empty( $coastalynk_sbm_body ) ? $coastalynk_sbm_body : $coastalynk_sbm_email_default;
+
+$coastalynk_sbm_no_opt_email_subject  = get_option( 'coastalynk_sbm_no_opt_email_subject' );
+$coastalynk_sbm_no_opt_email_subject = !empty( $coastalynk_sbm_no_opt_email_subject ) ? $coastalynk_sbm_no_opt_email_subject : __( 'Coastalynk SBM No Operation Alert - [port]', 'coastalynk-emails' );
+
+$coastalynk_sbm_no_opt_body  = get_option( 'coastalynk_sbm_no_opt_body' );
+$coastalynk_sbm_no_opt_body_default  = __( "Dear Sir/Madam,
+<br>
+<p>This is an automatic notification from Coastalynk Maritime Intelligence regarding a Single Buoy Mooring (sbm) operation detected but not performed at [port].</p><br>
+<h3>General Detail:</h3>
+<p>Date/Time (UTC): [last_updated]</p>
+<p>Location: ([lat], [lon]) (Lagos Offshore)</p>
+<p>Distance Between Vessels: [distance]</p>
+<p>Port Reference: [port]</p>
+<h3>Vessel Detail</h3>
+<p>Name: [name] | IMO: [imo] | MMSI: [mmsi]</p>
+<p>Type: [type] | Flag: <img src='[country_flag]' width='30px' alt='[country_iso]' /></p>
+<p>Status: [navigation_status]</p>
+<p>Draught: [draught]</p>
+<p>View on Coastalynk Map(<a href='[sbm-page-url]'>Click Here</a>)</p>
+<br>
+<p>This notification is part of Coastalynk\'s effort to provide real-time intelligence to support anti-bunkering enforcement, maritime security, and revenue protection.</p>
+<br>
+<p>Regards,</p>
+<p>Coastalynk Maritime Intelligence</p>", 'coastalynk-emails' );
+$coastalynk_sbm_no_opt_body = !empty( $coastalynk_sbm_no_opt_body ) ? $coastalynk_sbm_no_opt_body : $coastalynk_sbm_no_opt_body_default;
 ?>
 <div style="padding:20px 0;">
     <form method="post" action="<?php echo admin_url('admin-post.php'); ?>">
@@ -99,6 +124,21 @@ $coastalynk_sbm_body = !empty( $coastalynk_sbm_body ) ? $coastalynk_sbm_body : $
                                     <th><label for="coastalynk_sbm_complete_body"><?php _e('SBM Complete Email Message', 'coastalynk-emails' )?></label></th>
                                     <td>
                                         <?php wp_editor( wp_specialchars_decode( $coastalynk_sbm_complete_body ), "coastalynk_sbm_complete_body", $settings = array( 'textarea_rows' => 6 ) ); ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th colspan="2"><h2><?php _e('No Operation Email', 'coastalynk-emails' )?></h2></th>
+                                </tr>
+                                <tr>
+                                    <th><label for="coastalynk_sbm_no_opt_email_subject"><?php _e('No Operation Email Subject', 'coastalynk-emails' )?></label></th>
+                                    <td>
+                                        <?php echo sprintf( '<input type="text" value="%s" id="coastalynk_sbm_no_opt_email_subject" name="coastalynk_sbm_no_opt_email_subject" class="regular-text">', esc_html( $coastalynk_sbm_no_opt_email_subject ) ); ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><label for="coastalynk_sbm_no_opt_body"><?php _e('No Operation Email Message', 'coastalynk-emails' )?></label></th>
+                                    <td>
+                                        <?php wp_editor( wp_specialchars_decode( $coastalynk_sbm_no_opt_body ), "coastalynk_sbm_no_opt_body", $settings = array( 'textarea_rows' => 6 ) ); ?>
                                     </td>
                                 </tr>
                                 <tr>
